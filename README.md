@@ -1,6 +1,6 @@
 Hack_Nier
 ==================
-###### A mini game from Nier Automata
+###### A mini game from Nier Automata made in Unity Game Engine written in C#.
 
 
 ### Team members:

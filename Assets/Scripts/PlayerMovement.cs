@@ -3,17 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
-{   
-    
+{
     public float speed = 0.03f;
     public bool isKeyD = false;
     public bool isKeyA = false;
     public bool isKeyW = false;
     public bool isKeyS = false;
-    public bool isArrowR = false;
-    public bool isArrowL = false;
-    public bool isArrowU = false;
-    public bool isArrowD = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,10 +18,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isArrowR = false;
-        isArrowL = false;
-        isArrowU = false;
-        isArrowD = false;
         isKeyD = false;
         isKeyA = false;
         isKeyS = false;
@@ -46,11 +37,11 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate() 
     {
         if(isKeyW)
-            transform.Translate(0,-speed*Time.deltaTime,0);
+            transform.Translate(0,0,speed * Time.deltaTime);
         if(isKeyA)
             transform.Translate(-speed*Time.deltaTime,0,0);
         if(isKeyS)
-            transform.Translate(0,speed*Time.deltaTime,0);
+            transform.Translate(0,0, -speed * Time.deltaTime);
         if(isKeyD)
             transform.Translate(speed*Time.deltaTime,0,0);
     }

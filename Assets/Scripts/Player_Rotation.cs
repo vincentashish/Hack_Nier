@@ -7,7 +7,7 @@ public class Player_Rotation : MonoBehaviour
     // Start is called before the first frame update
     public Rigidbody rb;
     public float torque = 100f;
-    public float turn = 1000f;
+    //float turn = Input.GetAxis("Horizontal");
     public bool isArrowR = false;
     public bool isArrowL = false;
     public bool isArrowU = false;
@@ -39,15 +39,16 @@ public class Player_Rotation : MonoBehaviour
     {
         if (isArrowU || isArrowR || isArrowL || isArrowD)
         {
-            if (isArrowU)
-                rb.AddTorque(transform.forward * torque * turn);
-          /*if (isArrowD)
-                transform.Rotate(0, 0, 180f);
+            ForceMode mode;
+            //if (isArrowU)
+                //rb.AddTorque(transform.forward * torque * turn
+            //if (isArrowD)
+                //rb.AddTorque(0, -torque, 0, mode = ForceMode.Force);
             if (isArrowL)
-                transform.Rotate(0, 0, 90f);
+                rb.AddTorque(0, -torque, 0, mode = ForceMode.Force);
             if (isArrowR)
-                transform.Rotate(0, 0, 90f);
-           */
+                rb.AddTorque(0, torque, 0, mode = ForceMode.Force);
+             
         }
     }
 }
